@@ -6,7 +6,13 @@ A empresa em questão é uma empresa de Outlet Multimarcas, na qual comercializa
 
 **Objetivo**: Identificar os clientes mais valiosos para um programa de fidelização para os clientes mais valiosos, com o objetivo de aumentar a retenção e ciclo de vida desses clientes e também permitir uma maior previsibilidade da receita.
 
-# 2.0 Descrição dos dados
+# 2.0 Premissas do Negócio
+- Remoção de itens com preço inferior a 0.04.
+- Tirar da base os cliente não identificados e aqueles que tem apenas uma compra no período específicado.
+- Itens com quantidade negativa ou com o número do pedido destacando a letra 'C' serão considerados estornos.
+- Códigos de estoque como 'POST', 'D', 'DOT', 'M', 'S', 'AMAZONFEE', 'm', 'DCGSSBOY','DCGSSGIRL', 'PADS', 'B', 'CRUK' serão removidos por não haver clareza quanto a sua finalidade.
+
+# 2.1 Descrição dos dados
 
 |Nome da Variável |	Descrição |
 | -- | -- |
@@ -110,9 +116,8 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 |GMM|	0.306830|	0.291033|	0.313773|	0.311521|	0.355500|	0.361340|
 |HC|	0.390666|	0.392921|	0.390825|	0.399174|	0.414382|	0.409918|
 
-
 ## 6.2 Modelo Final: K-means com UMAP Embedding
-**Motivação:** Cluster mais bem definidos em relação aos demais.
+**Motivação:** Esses modelos foram aplicados com um número de grupos ( k ) de 9 a 14. Porém, foi escolhido o valor de k como 11 e UMAP Embedding, pois com esse número de clusters foi possível obter um bom desempenho ( Silhouette Score ) por facilitar a tomada de decisöes estratégicas pelo time de marketing e por apresentar clusters mais bem definidos em relação aos demais.
 
 ![image](https://github.com/user-attachments/assets/4408336c-4917-4ef5-b418-83cde4cc217c)
 
@@ -126,3 +131,6 @@ Silhouette Score: 0.5021472573280334
 - EC2 t2.medium (Ubunto 24.04)
 - Amazon RDS (Postgres)
 - Metabase (Hospedada no Render)
+
+  ![image](https://github.com/user-attachments/assets/05687f73-9c1f-494b-a8c2-f75739dbb671)
+
