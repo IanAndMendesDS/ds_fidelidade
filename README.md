@@ -4,7 +4,7 @@
 
 A empresa em questão é uma empresa de Outlet Multimarcas, na qual comercializa produtos de segunda linha de diversas marcas a um preço menor, através de um e-commerce. Foi constatado pelo time de negócios que existia uma parcela de clientes da sua base que compravam produtos mais caros, com alta frequência e contribuiam de forma significativa com o faturamento da empresa.
 
-**Objetivo**: Identificar os clientes mais valiosos para um programa de fidelização para os clientes mais valiosos, com o objetivo de aumentar a retenção e ciclo de vida desses clientes e também permitir uma maior previsibilidade da receita.
+**Objetivo**: Identificar os clientes mais valiosos para um programa de fidelização, esses clientes serão chamados de clientes "Insiders", com o objetivo de aumentar a retenção e ciclo de vida desses clientes e também permitir uma maior previsibilidade da receita.
 
 # 2.0 Premissas do Negócio
 - Remoção de itens com preço inferior a 0.04.
@@ -31,16 +31,16 @@ Para a resolução do problema foi utilizado a metodologia CRISP-DM
 ## 3.1 Fases do CRISP-DM
 1. Definição do Problema de Negócio: Identificar stakeholders e objetivos.
 2. Compreensão do Negócio: Alinhar expectativas e prototipar soluções.
-3. Coleta de Dados: Agregar dados do Kaggle.
+3. Coleta de Dados: Agregação de dados.
 4. Limpeza de Dados: Tratar valores ausentes, outliers e inconsistências.
 5. Análise Exploratória: Descobrir padrões e criar hipóteses.
 6. Modelagem dos Dados: Aplicar transformações estatísticas.
 7. Treinamento de Algoritmos: Avaliação de modelos (Holdout, Cross-Validation, Fine-Tuning).
-8. Avaliação de Desempenho: Seleção do melhor modelo via MAPE.
-9. Deploy da Solução: Publicação da API e um bot no Telegram para acesso do CFO.
+8. Avaliação de Desempenho: Seleção do melhor modelo via Silhouette Score.
+9. Deploy da Solução: Publicação do projeto nos servidores da AWS e visualizar dados atraves do Metabase.
 
 ## 3.2 Ferramentas Utilizadas
-- Python 3.10.11 (Pandas, Scikit-learn, Kmeans, UMAP, t-SNE e RandomForestRegressor)
+- Python 3.10.11 (Pandas, Scikit-learn, Papermill, Kmeans, UMAP, t-SNE e RandomForestRegressor)
 - Git/GitHub (Controle de versão)
 - VSCode/Google Collab (Desenvolvimento)
 - AWS (EC2, S3)
@@ -127,10 +127,24 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 Silhouette Score: 0.5021472573280334
 
 # 8.0 Deploy em Produção
+Nesta etapa o projeto é disponibilizado via Dashboard no Metabase com as informações de cada grupo para o programa de fidelidade. Para o deploy foi feita uma infra estrutura, na qual os dados foram armazenados no S3 da AWS, o notebook foi hospedado em um EC2 com uma rotina de execução feita pelo Cronjob, executando o notebook pelo Papermill e salvando os resultados em um banco de dados Postgres.
 - Amazon S3 
-- EC2 t2.medium (Ubunto 24.04)
+- EC2 t2.medium (Ubuntu 24.04)
 - Amazon RDS (Postgres)
 - Metabase (Hospedada no Render)
 
   ![image](https://github.com/user-attachments/assets/05687f73-9c1f-494b-a8c2-f75739dbb671)
+
+# 9.0 Conclusão
+  A partir dos resultados do negócio, pode-se concluir que o objetivo do projeto foi alcançado. Os problemas de agrupamento são geralmente mais complexos de resolver, é claro, porque não há variável de resposta. Portanto, é importante ter uma estratégia definida para a abordagem da solução, muitas vezes baseada no conhecimento do negócio.
+
+O programa de fidelidade é importante para o negócio porque os Insiders representam grande parte da receita da empresa e segmentar seus clientes ajuda a equipe de marketing a segmentar seus clientes a priorizar e agir com base em seu consumo para aumentar a frequência de vendas e a receita.
+
+# 10.0 Trabalhos Futuros
+- Feature Engineering: Criação de novas features.
+- Embedding: Desenvolver um melhor estudo sobre os embeddings para o espaço de dados, novas técnicas, novos testes de diferentes perspectivas, mais colunas de embedding.
+- Test A/B: Realizar teste A/B para comprovar a eficiência do projeto.
+- Faturamento: Desenvolver previsão de faturamento do novo grupo de Insiders.
+- Hipóteses: Desenvolver novas hipóteses de negócio para analisar o comportamento dos Clusters.
+- Dashboard: Acompanhar o uso do dashboard e otimizar as informações prestadas, também disponibilizar em Cloud.
 
