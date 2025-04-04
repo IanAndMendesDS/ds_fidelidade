@@ -126,12 +126,18 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 ## 7.1 Performance do modelo
 Silhouette Score: 0.5021472573280334
 
+## 7.2 Dashboard Metabase
+A partir da clusterização um Dashboard foi criado no Metabase, o intuito dele é mostrar as características dos Insiders e como ele se diferencia dos demais clusters.
+
+![image](https://github.com/user-attachments/assets/7868f823-9352-4442-8491-d725e51b6af9)
+
+
 # 8.0 Deploy em Produção
 Nesta etapa o projeto é disponibilizado via Dashboard no Metabase com as informações de cada grupo para o programa de fidelidade. Para o deploy foi feita uma infra estrutura, na qual os dados foram armazenados no S3 da AWS, o notebook foi hospedado em um EC2 com uma rotina de execução feita pelo Cronjob, executando o notebook pelo Papermill e salvando os resultados em um banco de dados Postgres.
 - Amazon S3 
 - EC2 t2.medium (Ubuntu 24.04)
 - Amazon RDS (Postgres)
-- Metabase (Hospedada no Render)
+- Metabase (Vizualização)
 
   ![image](https://github.com/user-attachments/assets/05687f73-9c1f-494b-a8c2-f75739dbb671)
 
