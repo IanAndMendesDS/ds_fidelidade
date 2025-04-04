@@ -37,7 +37,9 @@ Para a resolução do problema foi utilizado a metodologia CRISP-DM
 - Python 3.10.11 (Pandas, Scikit-learn, Kmeans, UMAP, t-SNE e RandomForestRegressor)
 - Git/GitHub (Controle de versão)
 - VSCode/Google Collab (Desenvolvimento)
-- AWS (EC2, S3 e RDS)
+- AWS (EC2, S3)
+- Postgres (RDS)
+- Metabase (Visualização de Dados)
 
 # 4.0 Análise de Dados
 Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, para as análises foi utilizado o ydata_profiling.
@@ -92,7 +94,7 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 |GMM|	0.226561|	0.315282|	0.262403|	0.372413|	0.350890|	0.381934|
 |HC|	0.465332|	0.483848|	0.501541|	0.512391|	0.514624|	0.521315|
 
-- Umap Embedding
+- UMAP Embedding
 
 | Numero de Clusters | 9 | 10 | 11 | 12 | 13 | 14 |
 | -- | -- | -- | -- | -- | -- | -- |
@@ -110,55 +112,17 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 
 
 ## 6.2 Modelo Final: K-means com UMAP Embedding
-**Motivação:** Melhor custo-benefício na hospedagem no Render.
+**Motivação:** Cluster mais bem definidos em relação aos demais.
 
 ![image](https://github.com/user-attachments/assets/4408336c-4917-4ef5-b418-83cde4cc217c)
 
 
-**Step 02. Feature Engineering:**
+# 7.0 Resultados
+## 7.1 Performance do modelo
+Silhouette Score: 0.5021472573280334
 
-**Step 03. Data Filtering:**
-
-**Step 04. Exploratory Data Analysis:**
-
-**Step 05. Data Preparation:**
-
-**Step 06. Feature Selection:**
-
-**Step 07. Machine Learning Modelling:**
-
-**Step 08. Hyperparameter Fine Tunning:**
-
-**Step 09. Convert Model Performance to Business Values:**
-
-**Step 10. Deploy Modelo to Production:**
-
-# 4. Top 3 Data Insights
-
-**Hypothesis 01:**
-
-**True/False.**
-
-**Hypothesis 02:**
-
-**True/False.**
-
-**Hypothesis 03:**
-
-**True/False.**
-
-# 5. Machine Learning Model Applied
-
-# 6. Machine Learning Modelo Performance
-
-# 7. Business Results
-
-# 8. Conclusions
-
-# 9. Lessons Learned
-
-# 10. Next Steps to Improve
-
-# LICENSE
-
-# All Rights Reserved - Comunidade DS 2021
+# 8.0 Deploy em Produção
+- Amazon S3 
+- EC2 t2.medium (Ubunto 24.04)
+- Amazon RDS (Postgres)
+- Metabase (Hospedada no Render)
