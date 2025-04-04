@@ -55,12 +55,30 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 
 
 # 5.0 Modelos de Machine Learning
-Modelos testados:
+## 5.1 Modelos testados:
   1. Kmeans
   2. Gaussian Mixture Model
   3. Hierarchical Clustering Silhouette Score
   4. DBSCAN
   5. RandomForestRegressor
+
+## 5.2 Métodos de Redução de Dimensionalidade Testados
+1. PCA
+   
+![image](https://github.com/user-attachments/assets/b5582bd7-16d2-4dde-b808-3d9d20d13fc1)
+
+2. UMAP
+   
+![image](https://github.com/user-attachments/assets/da501f18-2289-4851-bacf-91729fc12dbe)
+
+3. t-SNE
+   
+![image](https://github.com/user-attachments/assets/d2dde10f-0145-40aa-85e3-0c00cecd962b)
+
+4. Tree-based Embedding
+   
+![image](https://github.com/user-attachments/assets/686ed1cc-9b3a-4ed4-8eb6-05fba1e43fee)
+
 
 # 6.0 Seleção do Modelo
 
@@ -93,6 +111,9 @@ Modelos testados:
 
 ## 6.2 Modelo Final: K-means com UMAP Embedding
 **Motivação:** Melhor custo-benefício na hospedagem no Render.
+
+![image](https://github.com/user-attachments/assets/4408336c-4917-4ef5-b418-83cde4cc217c)
+
 
 **Step 02. Feature Engineering:**
 
