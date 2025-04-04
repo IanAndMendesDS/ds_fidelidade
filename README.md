@@ -66,7 +66,7 @@ Após a limpeza, foram feitas análises estatísticas e testes de hipóteses, pa
 ## 5.1 Modelos testados:
   1. Kmeans
   2. Gaussian Mixture Model
-  3. Hierarchical Clustering Silhouette Score
+  3. Hierarchical Clustering
   4. DBSCAN
   5. RandomForestRegressor
 
