@@ -28,6 +28,8 @@ A empresa em questão é uma empresa de Outlet Multimarcas, na qual comercializa
 # 3.0 Estratégia de Solução
 Para a resolução do problema foi utilizado a metodologia CRISP-DM
 
+![CRISP-DS](https://github.com/user-attachments/assets/9d372144-fb3e-4d69-8519-47da8ccbaf28)
+
 ## 3.1 Fases do CRISP-DM
 1. Definição do Problema de Negócio: Identificar stakeholders e objetivos.
 2. Compreensão do Negócio: Alinhar expectativas e prototipar soluções.
